@@ -1,0 +1,74 @@
+/**
+   A bank account has a balance that can be changed by 
+   deposits and withdrawals.
+   (Invariant: getBalance() >= 0)
+*/
+public class BankAccount
+{  
+   private double balance;
+
+   /**
+      Constructs a bank account with a zero balance.
+   */
+   public BankAccount()
+   {   
+      balance = 0;
+   }
+
+   /**
+      Constructs a bank account with a given balance.
+      @param initialBalance the initial balance
+      (Precondition: initialBalance >= 0)
+   */
+   public BankAccount(double initialBalance)
+   {
+      if (initialBalance < 0)
+      {
+         IllegalArgumentException exception
+               = new IllegalArgumentException("Initial balance is negative");
+         throw exception;
+      }
+      balance = initialBalance;
+   }
+
+   /**
+      Deposits money into the bank account.
+      @param amount the amount to deposit
+      (Precondition: amount >= 0)
+   */
+   public void deposit(double amount)
+   {  
+      if (amount < 0)
+      {
+         IllegalArgumentException exception
+               = new IllegalArgumentException("Amount is negative");
+         throw exception;
+      }
+      balance = balance + amount;
+   }
+
+   /**
+      Withdraws money from the bank account.
+      @param amount the amount to withdraw
+      (Precondition: amount <= getBalance())
+   */
+   public void withdraw(double amount)
+   {
+      if (amount > balance)
+      {
+         IllegalArgumentException exception
+               = new IllegalArgumentException("Amount exceeds balance");
+         throw exception;
+      }
+      balance = balance - amount;
+   }
+
+   /**
+      Gets the current balance of the bank account.
+      @return the current balance
+   */
+   public double getBalance()
+   {   
+      return balance;
+   }
+}

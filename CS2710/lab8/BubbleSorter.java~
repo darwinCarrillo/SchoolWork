@@ -1,0 +1,53 @@
+/**
+   This class sorts an array, using the bubble sort algorithm.
+*/
+public class BubbleSorter
+{
+   private int[] a;
+
+   /**
+      Constructs a bubble sorter.
+      @param anArray the array to sort
+   */
+   public BubbleSorter(int[] anArray)
+   {
+      a = anArray;
+   }
+
+   /**
+      Sorts the array managed by this bubble sorter.
+   */
+   public void sort()
+   {
+      boolean swapped = true;
+      for (int i = a.length - 1; i > 0 && swapped; i--)
+      {
+         swapped = false;
+         for (int j = a.length - 1; j >= a.length - i; j--)
+         {
+            if (a[j] < a[j - 1])
+            {
+               swap(j, j - 1);
+               swapped = true;
+            }
+         }
+      }
+   }
+
+   /**
+      Swaps two entries of the array.
+      @param i the first position to swap
+      @param j the second position to swap
+   */
+   private void swap(int i, int j)
+   {
+      int temp = a[i];
+      a[i] = a[j];
+      a[j] = temp;
+   }
+
+   public void outPutIt(){
+      for(int abc: a){
+	System.out.println(abc);}	
+   }	
+}

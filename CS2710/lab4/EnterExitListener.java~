@@ -1,0 +1,17 @@
+class EnterExitListener implements MouseListener
+{
+   public void mouseEntered(MouseEvent event)
+   {
+      System.out.println("Mouse Entered");
+   }
+
+   public void mouseExited(MouseEvent event)
+   {
+      frame.getContentPane().setBackground(Color.Blue);
+   }
+
+   // Do-nothing methods
+   public void mousePressed(MouseEvent event) {}
+   public void mouseReleased(MouseEvent event) {}
+   public void mouseClicked(MouseEvent event) {}
+}

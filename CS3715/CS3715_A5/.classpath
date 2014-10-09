@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="jetty/server"/>
+	<classpathentry kind="src" path="jetty/src"/>
+	<classpathentry kind="lib" path="jetty/jetty/javax.servlet.jar"/>
+	<classpathentry kind="lib" path="jetty/jetty/jetty-all-server.jar"/>
+	<classpathentry kind="lib" path="jetty/lib/gson-2.2.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

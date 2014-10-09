@@ -1,0 +1,36 @@
+import java.util.Scanner;
+import java.text.ParseException;
+
+public class AppointmentBookDemo
+{
+   public static void main(String[] args)
+   {
+      Scanner in = new Scanner(System.in);
+      AppointmentBook book = new AppointmentBook();
+      
+      boolean done = false; 
+      while (!done) 
+      {
+         System.out.println("Next date (or -1 when done):");
+         String input1 = in.nextLine();
+         
+         if (input1.equals("-1"))
+            done = true; 
+         else 
+         { 
+            System.out.println("Description:");
+            String input2 = in.nextLine(); 
+            try
+            {
+               book.add(input1, input2);
+            }
+            catch(ParseException exception)
+            {
+               System.out.println(
+                     "Bad date format. Please re-enter the appointment information.");
+            }
+         } 
+      } 
+      System.out.println(book);
+   }
+}
